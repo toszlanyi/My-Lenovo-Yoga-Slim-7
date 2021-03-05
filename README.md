@@ -43,25 +43,20 @@ This is a site to store all my compatibility stuff and optimisations for my new 
   2d) To get AMDGPU properly working download linux-firmware from
   
     https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/
+    
     and
     
-    ```
-    sudo cp linux-firmware/amdgpu/renoir* /lib/firmware/amdgpu
-    ```
+    `sudo cp linux-firmware/amdgpu/renoir* /lib/firmware/amdgpu`
 
 #### 3 Optimizations
 
   3a) Battery life should be safed when limiting the max power charge to 60%
   
-    ```
-    sudo echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
-    ```
+    `sudo echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
     
     disable (get battery charge back to 100%)
     
-    ```
-    sudo echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
-    ```
+    `sudo echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
     
   3b) push /tmp and /var/log into RAM by adding those lines into `/etc/fstab`
   
