@@ -16,8 +16,7 @@ This is a site to store all my compatibility stuff and optimisations for my new 
   ```
   - create partitions for /boot/efi, swap and /
   - install KDE neon
-  - First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx
-|    amdgpu, iommu, audio, network all show errors in `dmesg`
+  - First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx (`dmesg` shows errors for amdgpu, iommu, audio, network etc)
     
 #### 2 Start fixing the issues
 
@@ -33,31 +32,39 @@ This is a site to store all my compatibility stuff and optimisations for my new 
         
   2c) get microphone working
   - add Kernel parameter to `/etc/default/grub`
-  - GRUB_CMDLINE_LINUX="snd_rn_pci_acp3x.dmic_acpi_check=1"
-  - and 
+    ```
+    GRUB_CMDLINE_LINUX="snd_rn_pci_acp3x.dmic_acpi_check=1"
+    ```
+  - and
+    ```
+    sudo update-grub
+    ```
+
+  2d) To get AMDGPU properly working download linux-firmware from
   
-  `sudo update-grub`
-        
-  2d) get linux-firmware-20210208 from
     https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/
     and
-    
-    `sudo cp linux-firmware/amdgpu/renoir* /lib/firmware/amdgpu`
+    ```
+    sudo cp linux-firmware/amdgpu/renoir* /lib/firmware/amdgpu
+    ```
 
 #### 3 Optimizations
 
   3a) Battery life should be safed when limiting the max power charge to 60%
   
-    `sudo echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
-    
-  disable (get battery charge back to 100%)
-  
-    `sudo echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
-        
+    ```
+    sudo echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+    ```
+    disable (get battery charge back to 100%)
+    ```
+    sudo echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+    ```
   3b) push /tmp and /var/log into RAM by adding those lines into `/etc/fstab`
-  ```
-  tmpfs	      /tmp	         tmpfs	 nosuid	    0	0
-  tmpfs	      /var/log	     tmpfs	 nosuid	    0	0
-  ```
+    ```
+    tmpfs     /tmp        tmpfs       nosuid      0 0
+    tmpfs     /var/log    tmpfs       nosuid      0 0
+    ```
   3b) Touchpad does not wake up from Suspend - to enable it 
-    `xinput --enable 'PNP0C50:00 06CB:CDB0 Touchpad'`
+    ```
+    xinput --enable 'PNP0C50:00 06CB:CDB0 Touchpad'
+    ```
