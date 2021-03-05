@@ -3,23 +3,21 @@
 This is a site to store all my compatibility stuff and optimisations for my new Lenovo laptop
 
 Lenovo Yoga Slim 7 14ARE05 Notebook (35,56 cm/14 Zoll, AMD Ryzen 7, Radeon™, 1000 GB SSD)
-  AMD Ryzen 7 4800U 1,8 GHz (bis zu 4,2 GHz)
-  35,56 cm (14") Full HD IPS-Display (1920 x 1080)
-  16 GB LPDDR4x-RAM Arbeitsspeicher
-  Festplatte: 1000 GB SSD
-
+- AMD Ryzen 7 4800U 1,8 GHz (bis zu 4,2 GHz)
+- 35,56 cm (14") Full HD IPS-Display (1920 x 1080)
+- 16 GB LPDDR4x-RAM
+- Harddrive: 1000 GB SSD
 
 1. Erase all Windows partitions and install KDE neon 5.21 (based upon Ubuntu 20.04 LTS)
   
-- make sure that Firmware / BIOS settings show
-```
-SECURE BOOT = disabled
-```
-- create partitions for /boot/efi, swap and /
-- install KDE neon
-    
-First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx
-  amdgpu, iommu, audio, network all show errors in `dmesg`
+  - make sure that Firmware / BIOS settings show
+  ```
+  SECURE BOOT = disabled
+  ```
+  - create partitions for /boot/efi, swap and /
+  - install KDE neon
+  - First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx
+|    amdgpu, iommu, audio, network all show errors in `dmesg`
     
 2. Start fixing the issues
 
