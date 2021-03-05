@@ -13,7 +13,8 @@ Lenovo Yoga Slim 7 14ARE05 Notebook (35,56 cm/14 Zoll, AMD Ryzen 7, Radeon™, 1
 1. Erase all Windows partitions and install KDE neon 5.21 (based upon Ubuntu 20.04 LTS)
 
     make sure that Firmware / BIOS settings show
-        SECURE BOOT = disabled
+        
+        `SECURE BOOT = disabled`
         
     create partitions for /boot/efi, swap and /
     
@@ -36,7 +37,7 @@ First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx
         
     2c) get microphone working
         
-        add Kernel parameter to /etc/default/grub
+        add Kernel parameter to `/etc/default/grub`
         GRUB_CMDLINE_LINUX="snd_rn_pci_acp3x.dmic_acpi_check=1"
         
         and `sudo update-grub`
@@ -58,9 +59,10 @@ First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx
     
         `sudo echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
         
-    3b) push /tmp and /var/log into RAM
+    3b) push /tmp and /var/log into RAM by adding those lines into `/etc/fstab`
     
-        
+        tmpfs	      /tmp	         tmpfs	 nosuid	    0	0
+        tmpfs	      /var/log	     tmpfs	 nosuid	    0	0
     
     3b) Touchpad does not wake up from Suspend - to enable it 
     
