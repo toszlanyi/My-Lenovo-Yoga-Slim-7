@@ -1,0 +1,165 @@
+00:00.0 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir Root Complex
+	Subsystem: Lenovo Renoir Root Complex
+	Flags: fast devsel
+
+00:00.2 IOMMU: Advanced Micro Devices, Inc. [AMD] Renoir IOMMU
+	Subsystem: Lenovo Renoir IOMMU
+	Flags: bus master, fast devsel, latency 0, IRQ 25
+	Capabilities: <access denied>
+
+00:01.0 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir PCIe Dummy Host Bridge
+	Flags: fast devsel
+
+00:02.0 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir PCIe Dummy Host Bridge
+	Flags: fast devsel
+
+00:02.2 PCI bridge: Advanced Micro Devices, Inc. [AMD] Renoir PCIe GPP Bridge (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 36
+	Bus: primary=00, secondary=01, subordinate=01, sec-latency=0
+	I/O behind bridge: [disabled]
+	Memory behind bridge: 80600000-806fffff [size=1M]
+	Prefetchable memory behind bridge: [disabled]
+	Capabilities: <access denied>
+	Kernel driver in use: pcieport
+
+00:02.3 PCI bridge: Advanced Micro Devices, Inc. [AMD] Renoir PCIe GPP Bridge (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 37
+	Bus: primary=00, secondary=02, subordinate=02, sec-latency=0
+	I/O behind bridge: [disabled]
+	Memory behind bridge: 80500000-805fffff [size=1M]
+	Prefetchable memory behind bridge: [disabled]
+	Capabilities: <access denied>
+	Kernel driver in use: pcieport
+
+00:08.0 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir PCIe Dummy Host Bridge
+	Flags: fast devsel
+
+00:08.1 PCI bridge: Advanced Micro Devices, Inc. [AMD] Renoir Internal PCIe GPP Bridge to Bus (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 38
+	Bus: primary=00, secondary=03, subordinate=03, sec-latency=0
+	I/O behind bridge: 00001000-00001fff [size=4K]
+	Memory behind bridge: 80000000-804fffff [size=5M]
+	Prefetchable memory behind bridge: 000000fce0000000-000000fcf01fffff [size=258M]
+	Capabilities: <access denied>
+	Kernel driver in use: pcieport
+
+00:14.0 SMBus: Advanced Micro Devices, Inc. [AMD] FCH SMBus Controller (rev 51)
+	Subsystem: Lenovo FCH SMBus Controller
+	Flags: 66MHz, medium devsel
+	Kernel driver in use: piix4_smbus
+	Kernel modules: i2c_piix4, sp5100_tco
+
+00:14.3 ISA bridge: Advanced Micro Devices, Inc. [AMD] FCH LPC Bridge (rev 51)
+	Subsystem: Lenovo FCH LPC Bridge
+	Flags: bus master, 66MHz, medium devsel, latency 0
+
+00:18.0 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir Device 24: Function 0
+	Flags: fast devsel
+
+00:18.1 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir Device 24: Function 1
+	Flags: fast devsel
+
+00:18.2 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir Device 24: Function 2
+	Flags: fast devsel
+
+00:18.3 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir Device 24: Function 3
+	Flags: fast devsel
+	Kernel driver in use: k10temp
+	Kernel modules: k10temp
+
+00:18.4 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir Device 24: Function 4
+	Flags: fast devsel
+
+00:18.5 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir Device 24: Function 5
+	Flags: fast devsel
+
+00:18.6 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir Device 24: Function 6
+	Flags: fast devsel
+
+00:18.7 Host bridge: Advanced Micro Devices, Inc. [AMD] Renoir Device 24: Function 7
+	Flags: fast devsel
+
+01:00.0 Network controller: Intel Corporation Wi-Fi 6 AX200 (rev 1a)
+	Subsystem: Intel Corporation Wi-Fi 6 AX200
+	Flags: bus master, fast devsel, latency 0, IRQ 83
+	Memory at 80600000 (64-bit, non-prefetchable) [size=16K]
+	Capabilities: <access denied>
+	Kernel driver in use: iwlwifi
+	Kernel modules: iwlwifi
+
+02:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller SM981/PM981/PM983 (prog-if 02 [NVM Express])
+	Subsystem: Samsung Electronics Co Ltd NVMe SSD Controller SM981/PM981/PM983
+	Flags: bus master, fast devsel, latency 0, IRQ 58, NUMA node 0
+	Memory at 80500000 (64-bit, non-prefetchable) [size=16K]
+	Capabilities: <access denied>
+	Kernel driver in use: nvme
+	Kernel modules: nvme
+
+03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Renoir (rev c1) (prog-if 00 [VGA controller])
+	DeviceName: Realtek RTL8111E Ethernet LOM
+	Subsystem: Lenovo Renoir
+	Flags: bus master, fast devsel, latency 0, IRQ 49
+	Memory at fce0000000 (64-bit, prefetchable) [size=256M]
+	Memory at fcf0000000 (64-bit, prefetchable) [size=2M]
+	I/O ports at 1000 [size=256]
+	Memory at 80400000 (32-bit, non-prefetchable) [size=512K]
+	Capabilities: <access denied>
+	Kernel driver in use: amdgpu
+	Kernel modules: amdgpu
+
+03:00.1 Audio device: Advanced Micro Devices, Inc. [AMD/ATI] Device 1637
+	Subsystem: Lenovo Device 380d
+	Flags: bus master, fast devsel, latency 0, IRQ 102
+	Memory at 804c8000 (32-bit, non-prefetchable) [size=16K]
+	Capabilities: <access denied>
+	Kernel driver in use: snd_hda_intel
+	Kernel modules: snd_hda_intel
+
+03:00.2 Encryption controller: Advanced Micro Devices, Inc. [AMD] Family 17h (Models 10h-1fh) Platform Security Processor
+	Subsystem: Lenovo Family 17h (Models 10h-1fh) Platform Security Processor
+	Flags: bus master, fast devsel, latency 0, IRQ 78
+	Memory at 80300000 (32-bit, non-prefetchable) [size=1M]
+	Memory at 804ce000 (32-bit, non-prefetchable) [size=8K]
+	Capabilities: <access denied>
+	Kernel driver in use: ccp
+	Kernel modules: ccp
+
+03:00.3 USB controller: Advanced Micro Devices, Inc. [AMD] Renoir USB 3.1 (prog-if 30 [XHCI])
+	Subsystem: Lenovo Renoir USB 3.1
+	Flags: bus master, fast devsel, latency 0, IRQ 40
+	Memory at 80000000 (64-bit, non-prefetchable) [size=1M]
+	Capabilities: <access denied>
+	Kernel driver in use: xhci_hcd
+	Kernel modules: xhci_pci
+
+03:00.4 USB controller: Advanced Micro Devices, Inc. [AMD] Renoir USB 3.1 (prog-if 30 [XHCI])
+	Subsystem: Lenovo Renoir USB 3.1
+	Flags: bus master, fast devsel, latency 0, IRQ 49
+	Memory at 80100000 (64-bit, non-prefetchable) [size=1M]
+	Capabilities: <access denied>
+	Kernel driver in use: xhci_hcd
+	Kernel modules: xhci_pci
+
+03:00.5 Multimedia controller: Advanced Micro Devices, Inc. [AMD] Raven/Raven2/FireFlight/Renoir Audio Processor (rev 01)
+	Subsystem: Lenovo Raven/Raven2/FireFlight/Renoir Audio Processor
+	Flags: bus master, fast devsel, latency 0, IRQ 82
+	Memory at 80480000 (32-bit, non-prefetchable) [size=256K]
+	Capabilities: <access denied>
+	Kernel driver in use: snd_rn_pci_acp3x
+	Kernel modules: snd_pci_acp3x, snd_rn_pci_acp3x
+
+03:00.6 Audio device: Advanced Micro Devices, Inc. [AMD] Family 17h (Models 10h-1fh) HD Audio Controller
+	Subsystem: Lenovo Family 17h (Models 10h-1fh) HD Audio Controller
+	Flags: bus master, fast devsel, latency 0, IRQ 103
+	Memory at 804c0000 (32-bit, non-prefetchable) [size=32K]
+	Capabilities: <access denied>
+	Kernel driver in use: snd_hda_intel
+	Kernel modules: snd_hda_intel
+
+03:00.7 Signal processing controller: Advanced Micro Devices, Inc. [AMD] Raven/Raven2/Renoir Sensor Fusion Hub
+	Subsystem: Lenovo Raven/Raven2/Renoir Sensor Fusion Hub
+	Flags: fast devsel, IRQ 255
+	Memory at 80200000 (32-bit, non-prefetchable) [disabled] [size=1M]
+	Memory at 804cc000 (32-bit, non-prefetchable) [disabled] [size=8K]
+	Capabilities: <access denied>
+
