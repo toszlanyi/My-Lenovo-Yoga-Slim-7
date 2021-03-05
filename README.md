@@ -1,6 +1,7 @@
 ### My Lenovo Yoga Slim 7 as media Notebook
 
-This is a site to store all my compatibility stuff and optimisations for my new Lenovo laptop
+This is a site to store all the compatibility stuff and optimisations for my new Lenovo laptop
+**!! this is a guidance - use at your own risk !!**
 
 #### Lenovo Yoga Slim 7 14ARE05 Notebook (35,56 cm/14 Zoll, AMD Ryzen 7, Radeon™, 1000 GB SSD)
 - AMD Ryzen 7 4800U 1,8 GHz (bis zu 4,2 GHz)
