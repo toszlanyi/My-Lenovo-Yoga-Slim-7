@@ -8,7 +8,7 @@ Lenovo Yoga Slim 7 14ARE05 Notebook (35,56 cm/14 Zoll, AMD Ryzen 7, Radeon™, 1
 - 16 GB LPDDR4x-RAM
 - Harddrive: 1000 GB SSD
 
-1. Erase all Windows partitions and install KDE neon 5.21 (based upon Ubuntu 20.04 LTS)
+1 Erase all Windows partitions and install KDE neon 5.21 (based upon Ubuntu 20.04 LTS)
   
   - make sure that Firmware / BIOS settings show
   ```
@@ -19,7 +19,7 @@ Lenovo Yoga Slim 7 14ARE05 Notebook (35,56 cm/14 Zoll, AMD Ryzen 7, Radeon™, 1
   - First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx
 |    amdgpu, iommu, audio, network all show errors in `dmesg`
     
-2. Start fixing the issues
+2 Start fixing the issues
 
 2a) upgrade Kernel
   best to use Lowlatency 5.8.44-xx Ubuntu patched Kernel
