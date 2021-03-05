@@ -11,9 +11,9 @@ This is a site to store all my compatibility stuff and optimisations for my new 
 #### 1 Erase all Windows partitions and install KDE neon 5.21 (based upon Ubuntu 20.04 LTS)
   
   - make sure that Firmware / BIOS settings show
-  ```
-  SECURE BOOT = disabled
-  ```
+    ```
+    SECURE BOOT = disabled
+    ```
   - create partitions for /boot/efi, swap and /
   - install KDE neon
   - First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx (`dmesg` shows errors for amdgpu, iommu, audio, network etc)
@@ -44,6 +44,7 @@ This is a site to store all my compatibility stuff and optimisations for my new 
   
     https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/
     and
+    
     ```
     sudo cp linux-firmware/amdgpu/renoir* /lib/firmware/amdgpu
     ```
@@ -55,16 +56,22 @@ This is a site to store all my compatibility stuff and optimisations for my new 
     ```
     sudo echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
     ```
+    
     disable (get battery charge back to 100%)
+    
     ```
     sudo echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
     ```
+    
   3b) push /tmp and /var/log into RAM by adding those lines into `/etc/fstab`
+  
     ```
     tmpfs     /tmp        tmpfs       nosuid      0 0
     tmpfs     /var/log    tmpfs       nosuid      0 0
     ```
-  3b) Touchpad does not wake up from Suspend - to enable it 
+    
+  3c) Touchpad does not wake up from Suspend - to enable it 
+  
     ```
     xinput --enable 'PNP0C50:00 06CB:CDB0 Touchpad'
     ```
