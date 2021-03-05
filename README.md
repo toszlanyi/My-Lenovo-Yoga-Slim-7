@@ -48,13 +48,15 @@ This is a site to store all my compatibility stuff and optimisations for my new 
     
   `sudo cp linux-firmware/amdgpu/renoir* /lib/firmware/amdgpu`
     
-  2e) Touchpad does not wake up from Suspend - to enable it 
+  2e) Touchpad does not wake up from Suspend - to enable it after resume
   
   `xinput --enable 'PNP0C50:00 06CB:CDB0 Touchpad'`
+  
+  **!! Todo:** Find a way to automize the process
 
 #### 3 Optimizations
 
-  3a) Battery life should be safed when limiting the max power charge to 60%
+  3a) Battery life should be safed when always at AC Power by limiting the max power charge to 60%
   
   `sudo echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
     
