@@ -18,7 +18,7 @@ This is a site to store all my compatibility stuff and optimisations for my new 
   - install KDE neon
   - First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx (`dmesg` shows errors for amdgpu, iommu, audio, network etc)
     
-#### 2 Start fixing the issues
+#### 2 Fixing some issues
 
   2a) upgrade Kernel
   - best to use Lowlatency 5.8.44-xx Ubuntu patched Kernel
@@ -42,31 +42,29 @@ This is a site to store all my compatibility stuff and optimisations for my new 
 
   2d) To get AMDGPU properly working download linux-firmware from
   
-    https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/
+  https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/
     
-    and
+  and
     
-    `sudo cp linux-firmware/amdgpu/renoir* /lib/firmware/amdgpu`
+  `sudo cp linux-firmware/amdgpu/renoir* /lib/firmware/amdgpu`
+    
+  2e) Touchpad does not wake up from Suspend - to enable it 
+  
+  `xinput --enable 'PNP0C50:00 06CB:CDB0 Touchpad'`
 
 #### 3 Optimizations
 
   3a) Battery life should be safed when limiting the max power charge to 60%
   
-    `sudo echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
+  `sudo echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
     
-    disable (get battery charge back to 100%)
+  disable (get battery charge back to 100%)
     
-    `sudo echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
+  `sudo echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode`
     
   3b) push /tmp and /var/log into RAM by adding those lines into `/etc/fstab`
   
-    ```
-    tmpfs     /tmp        tmpfs       nosuid      0 0
-    tmpfs     /var/log    tmpfs       nosuid      0 0
-    ```
-    
-  3c) Touchpad does not wake up from Suspend - to enable it 
-  
-    ```
-    xinput --enable 'PNP0C50:00 06CB:CDB0 Touchpad'
-    ```
+  ```
+  tmpfs     /tmp        tmpfs       nosuid      0 0
+  tmpfs     /var/log    tmpfs       nosuid      0 0
+  ```
