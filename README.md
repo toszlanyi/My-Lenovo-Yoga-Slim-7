@@ -52,7 +52,7 @@
   
   `xinput --enable 'PNP0C50:00 06CB:CDB0 Touchpad'`
   
-  **!! Todo:** Find a way to automize the process
+  **!! Todo:** Find a way to automize the process - see issues tab
 
 #### 3 Optimizations
 
@@ -70,3 +70,9 @@
   tmpfs     /tmp        tmpfs       nosuid      0 0
   tmpfs     /var/log    tmpfs       nosuid      0 0
   ```
+
+  3c) enable AMDs own CPU frequency scaler by adding
+  
+  `amd_cpufreq=enable`
+  
+  to kernel boot parameter.
