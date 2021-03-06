@@ -14,6 +14,7 @@
     ```
     SECURE BOOT = disabled
     ```
+  - To boot with the standard Ubuntu Kernel v.5.4 only works with `nomodeset` kernel parameter. `noacpi` & `iommu=off` can help as well.
   - create partitions for /boot/efi, swap and /
   - install KDE neon
   - First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx (`dmesg` shows errors for amdgpu, iommu, audio, network etc)
