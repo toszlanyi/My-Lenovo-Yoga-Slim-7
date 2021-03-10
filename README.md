@@ -17,18 +17,22 @@
   - To boot with the standard Ubuntu Kernel v.5.4 only works with `nomodeset` kernel parameter. `noacpi` & `iommu=off` can help as well.
   - create partitions for /boot/efi, swap and /
   - install KDE neon
-  - First start with KDE neon is a mess using default Ubuntu Kernel 5.4.xx (`dmesg` shows errors for amdgpu, iommu, audio, network etc)
+  - First start with KDE neon is a mess using default Ubuntu Kernel 5.4 (`dmesg` shows errors for amdgpu, iommu, audio, network etc)
     
 #### 2 Fixing some issues
 
   2a) upgrade Kernel
-  - best to use Lowlatency 5.8.44-xx Ubuntu patched Kernel
+  - best to use Lowlatency 5.8 Ubuntu patched Kernel
   - most parts working now
   - later Mainline Kernels brake sound and vga
     
   2b) Sound is choppy and doesn't work always. To fix this blacklist the realtec sound module 
   ```
   sudo tee /etc/modprobe.d/blacklist-realtek.conf <<<'blacklist snd_hda_codec_realtek'
+  ```
+  if that still doesnt work, add `options snd_hda_intel index=1,0` to  `/etc/modprobe.d/alsa-base.conf`
+  ```
+  sudo tee 'options snd_hda_intel index=1,0' >> /etc/modprobe.d/alsa-base.conf
   ```
         
   2c) get microphone working
@@ -77,3 +81,15 @@
   `amd_cpufreq=enable`
   
   to kernel boot parameter.
+
+  3d) reduce swappiness
+  add to `/etc/sysctl.conf`
+  
+  ```
+  # Reduce the inclination to swap
+  vm.swappiness=10
+  ```
+  
+  check swappiness with `cat /proc/sys/vm/swappiness`
+  
+  
