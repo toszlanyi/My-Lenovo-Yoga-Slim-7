@@ -1,0 +1,36 @@
+Extrahieren des Installers:
+
+innoextract dmcn39ww.exe
+cd codeGetExtractPath
+7z x WIN64.exe
+7z x Majolica.fd
+
+.reloc ist die BIOS Datei
+
+
+Anfang des BIOS finden:
+
+im hex editor öffnen und nach "IFLASH_BIOSIMG" suchen
+alles ab da gehört zum BIOS
+vorherige Zeilen alle löschen, incl "IFLASH_BIOSIMG"
+
+
+Ende des BIOS finden:
+
+BIOS geht bis Zeile 00FF:FFF0 (Byte 0016777200 -> 16MB)
+oder nach "IFLASH_INI_IMG" suchen.
+Alles ab da löschen
+
+
+Die Datei speichern - zB als bios.rom
+
+
+Den ch341a per usb auf den BIOS chip stecken und mit
+
+
+sudo flashrom --programmer ch341a_spi -w bios.rom
+
+
+flashen...
+
+FERTIG !
